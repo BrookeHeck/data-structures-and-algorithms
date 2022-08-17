@@ -115,7 +115,11 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  let objArr = arr.filter(statObj => {
+    if(statObj.baseStat > minBaseStat) return true;
+    return false;
+  });
+  return objArr.map(obj => obj.stat.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -168,7 +172,7 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  return arr.filter(character => !character.children);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -180,7 +184,12 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  let numbers = arr.filter(element => Number.isInteger(element));
+  return numbers.map(num => {
+    if(num % 2 === 0) {
+      return 'even';
+    } else return 'odd';
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
