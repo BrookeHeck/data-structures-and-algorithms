@@ -102,10 +102,12 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   return arr.sort((one, two) => {
-    for(let char in one) {
-      let num = one.toLowerCase().charCodeAt(char) - two.toLowerCase().charCodeAt(char);
-      if(num !== 0) return num;
-    }
+    let oneLower = one.toLowerCase();
+    let twoLower = two.toLowerCase();
+
+    if(oneLower < twoLower) return -1;
+    if(oneLower > twoLower) return 1;
+    if(oneLower === twoLower) return 0;
   });
 };
 
@@ -128,7 +130,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  return arr.sort((one, two) => one.length - two.length);
+  return arr.sort((one, two) => one.toString().length - two.toString().length);
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -150,7 +152,13 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  return arr.sort((person1, person2) => person1.lastName - person2.lastName);
+  return arr.sort((person1, person2) => {
+    let person1Name = person1.lastName.toLowerCase();
+    let person2Name = person2.lastName.toLowerCase();
+    if(person1Name < person2Name) return -1;
+    if(person1Name > person2Name) return 1;
+    else return 0;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -164,7 +172,23 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  return arr.sort((one, two) => {
+    let oneLast = one.lastName.toLowerCase();
+    let twoLast = two.lastName.toLowerCase();
+    if(oneLast < twoLast) return -1;
+    if(oneLast > twoLast) return 1;
+    else {
+      let oneFirst = one.firstName.toLowerCase();
+      let twoFirst = two.firstName.toLowerCase();
+      if(oneFirst < twoFirst) return -1;
+      if(oneFirst > twoFirst) return 1;
+      else {
+        if(one.age < two.age) return -1;
+        if(one.age > two.age) return 1;
+        else return 0;
+      }
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -189,8 +213,26 @@ const meetings = [
   new Meeting('Friday', '1200', '1345'),
 ];
 
+const getDay = (meeting) => {
+  let day = meeting.dayOfWeek;
+  switch(day) {
+  case 'Monday': return 0;
+  case 'Tuesday': return 1;
+  case 'Wednesday': return 2;
+  case 'Thursday': return 3;
+  case 'Friday': return 4;
+  default: return -1;
+  }
+};
+
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  return arr.sort((one, two) => {
+    let day1 = getDay(one);
+    let day2 = getDay(two);
+    if(day1 < day2) return -1;
+    if(day1 > day2) return 1;
+    else return 0;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -204,7 +246,23 @@ You DO NOT need to use your solution to Challenge 12 in completing Challenge 13.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // Solution code here...
+  return arr.sort((one, two) => {
+    let day1 = getDay(one);
+    let day2 = getDay(two);
+    if(day1 < day2) return -1;
+    if(day1 > day2) return 1;
+    else {
+      if(one.start < two.start) return -1;
+      if(one.start > two.start) return 1;
+      else {
+        let time1 = one.end - one.start;
+        let time2 = two.end - two.start;
+        if(time1 < time2) return -1;
+        if(time1 > time2) return 1;
+        else return 0;
+      }
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
