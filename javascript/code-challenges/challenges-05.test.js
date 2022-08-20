@@ -1,5 +1,7 @@
 'use strict';
 
+const { children } = require("cheerio/lib/api/traversing");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -272,7 +274,9 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  return arr.reduce(obj => {
+    if(obj.stat.name === statName) return obj;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -286,7 +290,11 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 const extractChildren = (arr) => {
-  // Solution code here...
+  let aChars = arr.filter(char => char.name.includes('a'));
+  return aChars.reduce((childrenArr, char) => {
+    if(char.children) childrenArr.push(...char.children);
+    return childrenArr;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
