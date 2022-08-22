@@ -128,12 +128,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  let counter = str.length - 1;
-  return [...str].reduce(reverse => {
-    reverse += str[counter];
-    counter--;
-    return reverse;
-  }, '');
+  return [...str].reduce((acc, cur) => cur + acc);
 };
 
 /* ------------------------------------------------------------------------------------------------
