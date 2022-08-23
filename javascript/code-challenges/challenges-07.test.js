@@ -129,8 +129,7 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-  let ingredientArr = recipe.ingredients;
-  return ingredientArr.reduce((accumulator, current) => {
+  return recipe.ingredients.reduce((accumulator, current) => {
     let newArr = current.split(' ');
     let singleIngredient = newArr.slice(2, newArr.length);
     let newStr = singleIngredient.join(' ');
@@ -148,8 +147,7 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 const splitFoods = (recipe) => {
-  let ingredientArr = recipe.ingredients;
-  return ingredientArr.reduce((accumulator, current) => {
+  return recipe.ingredients.reduce((accumulator, current) => {
     let newArr = current.split(' ');
     newArr.splice(0, 2);
     let newStr = newArr.join(' ');
@@ -169,9 +167,12 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 ------------------------------------------------------------------------------------------------ */
 
 const stepActions = (recipe) => {
-  let result = [];
-  // Solution code here...
-  return result;
+  return recipe.steps.reduce((accumulator, current) => {
+    let newArr = current.split(' ');
+    let verb = newArr[0];
+    accumulator.push(verb);
+    return accumulator;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -311,7 +312,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return a list of recipe steps', () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual(['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']);
     expect(stepActions(gruffaloCrumble).length).toStrictEqual(9);
