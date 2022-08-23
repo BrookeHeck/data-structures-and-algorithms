@@ -132,8 +132,8 @@ const listFoods = (recipe) => {
   let ingredientArr = recipe.ingredients;
   return ingredientArr.reduce((accumulator, current) => {
     let newArr = current.split(' ');
-    newArr.splice(0, 2);
-    let newStr = newArr.join(' ');
+    let singleIngredient = newArr.slice(2, newArr.length);
+    let newStr = singleIngredient.join(' ');
     accumulator.push(newStr);
     return accumulator;
   }, []);
@@ -148,9 +148,14 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 const splitFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
-  return result;
+  let ingredientArr = recipe.ingredients;
+  return ingredientArr.reduce((accumulator, current) => {
+    let newArr = current.split(' ');
+    newArr.splice(0, 2);
+    let newStr = newArr.join(' ');
+    accumulator.push(newStr);
+    return accumulator;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -300,7 +305,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
