@@ -129,9 +129,14 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
-  return result;
+  let ingredientArr = recipe.ingredients;
+  return ingredientArr.reduce((accumulator, current) => {
+    let newArr = current.split(' ');
+    newArr.splice(0, 2);
+    let newStr = newArr.join(' ');
+    accumulator.push(newStr);
+    return accumulator;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
