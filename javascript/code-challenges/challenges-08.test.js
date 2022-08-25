@@ -72,9 +72,8 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  let findW = [...str].find(char => char === 'w');
-  if(findW === 'w') return true;
-  else return false;
+  let validator = /w/g;
+  return validator.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,7 +89,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
+  let validator = /[0-9]/g;
+  return validator.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,7 +101,8 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  // Solution code here...
+  let validator = /world/g;
+  return validator.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
