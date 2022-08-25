@@ -189,12 +189,9 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  let remove = [];
-  for(let idx in arr) {
-    if(arr[idx] % 2 === 0) remove.push(idx);
-  }
-  remove.forEach(idx => arr.splice(idx, 1));
-  return arr;
+  arr.forEach((num, idx) => {
+    if(num % 2 !== 0) arr.splice(idx, 1);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
