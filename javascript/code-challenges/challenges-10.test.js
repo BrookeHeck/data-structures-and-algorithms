@@ -45,10 +45,13 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  console.log(matrix);
-  console.log();
-  const numArr = [...matrix[0], ...matrix[1], ...matrix[2]];
-  return numArr.reduce((accumulator, current) => accumulator + current, 0);
+  let sum = 0;
+  for(let i in matrix) {
+    for(let j of matrix[i]) {
+      sum += j;
+    }
+  }
+  return sum;
 };
 
 
@@ -75,8 +78,15 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  let hourlyTotals = [];
+  for(let i = 0; i < stores[0].length; i++) {
+    let sum = 0;
+    for(let store of stores) {
+      sum += store[i];
+    }
+    hourlyTotals.push(sum);
+  }
+  return hourlyTotals;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,7 +100,11 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  let results = [];
+  for(let i in hours) {
+    results.push({sales: `${data[i]} cookies`, time: hours[i]});
+  }
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,7 +129,9 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let petStore = arr.find(store => store.store === 'Pet store');
+  let treats = petStore.items.find(item => item.name === 'Treats');
+  return treats.quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
