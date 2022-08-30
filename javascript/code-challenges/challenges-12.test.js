@@ -72,7 +72,7 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  let regex = /\w+@\w+\.(net|com|org)/g;
+  let regex = /^\w+.\w+@\w+\.(net|com|org)$/g;
   return regex.test(email);
 };
 
@@ -98,11 +98,8 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  let regex1 = /[-\s()]/g;
-  let newPhoneNumber = phoneNumber.replace(regex1, '');
-  console.log(newPhoneNumber);
-  let regex2 = /^[0-9]{10}$/g;
-  return regex2.test(newPhoneNumber);
+  let regex2 = /^(\(?[0-9]{3}\)|[0-9]{3})\s?-?[0-9]{3}\s?-?[0-9]{4}$/g;
+  return regex2.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
