@@ -26,7 +26,9 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
+  return arr.reduce((accumulator, str) => {
+    return [...accumulator, str.charAt(0)];
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -38,7 +40,11 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  return arr.reduce((accumulator, str) => {
+    let temp = [...accumulator];
+    if(str.includes(':)')) temp.push(str);
+    return temp;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,7 +56,8 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  const regex = /[()\s-]/g;
+  return arr.map(phoneNum => phoneNum.replace(regex, ''));
 };
 
 /* ------------------------------------------------------------------------------------------------
