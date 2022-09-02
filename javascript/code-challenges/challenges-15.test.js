@@ -120,7 +120,8 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  return !Number.isNaN(arr[0][property]) ?
+  let regex = /^[0-9]/g;
+  return regex.test(arr[0][property]) ?
     arr.sort((previous, current) => previous[property] - current[property]) :
     arr.sort((previous, current) => previous[property].charCodeAt(0) - current[property].charCodeAt(0));
 };
