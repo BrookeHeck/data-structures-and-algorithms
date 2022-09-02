@@ -11,8 +11,9 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  // Solution code here...
-}
+  let regex = /^(Mr|Mrs|Ms|Dr).\s[a-zA-Z]\w+/g;
+  return arr.filter(name => regex.test(name));
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -23,7 +24,7 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
+  return arr.map(str => str[0].toUpperCase() + str.slice(1, str.length));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,7 +99,10 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  let biggerArr = arr.reduce((accumulator, character) => {
+    return Number.parseInt(character.mass) > 77 ? [...accumulator, character.name] : accumulator;
+  }, []);
+  return biggerArr.join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,7 +120,10 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  let regex = /^[0-9]/g;
+  return regex.test(arr[0][property]) ?
+    arr.sort((previous, current) => previous[property] - current[property]) :
+    arr.sort((previous, current) => previous[property].charCodeAt(0) - current[property].charCodeAt(0));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,7 +139,8 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  // Solution code here...
+  let regex = /^https:\/\//g;
+  return regex.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -153,9 +161,25 @@ Here is a sample board:
   ['X', 'O', 'X'],
 ];
 ------------------------------------------------------------------------------------------------ */
+const checkArr = (boardArr) => {
+  return (boardArr[0] !== '' && boardArr[0] === boardArr[1] && boardArr[1] === boardArr[2]);
+};
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  let winner = false;
+  for (let row of board) {
+    winner = checkArr(row);
+    if (winner) break;
+  }
+  if (!winner) {
+    for (let i in board) {
+      winner = checkArr([board[0][i], board[1][i], board[2][i]]);
+      if (winner) break;
+    }
+  }
+  if (!winner) winner = checkArr([board[0][0], board[1][1], board[2][2]]);
+  if (!winner) winner = checkArr([board[0][2], board[1][1], board[2][0]]);
+  return winner;
 };
 
 /* ------------------------------------------------------------------------------------------------
