@@ -29,6 +29,35 @@ class SinglyLinkedList {
     return false;
   }
 
+  insertBefore(searchValue, newValue) {
+    let current = this.head;
+    if(current.value === searchValue) this.insert(newValue);
+    else {
+      while(current.next !== null && current.next.value !== searchValue) {
+        current = current.next;
+      }
+      if(current.next === null) throw new Error('Node not found');
+      else {
+        let newNode = new Node(newValue);
+        newNode.next = current.next;
+        current.next = newNode;
+      }
+    }
+  }
+
+  insertAfter(searchValue, newValue) {
+    let current = this.head;
+    while(current.next !== null && current.value !== searchValue) {
+      current = current.next;
+    }
+    if(current.next === null) throw new Error('Node not found');
+    else {
+      let newNode = new Node(newValue);
+      newNode.next = current.next;
+      current.next = newNode;
+    }
+  }
+
   toString() {
     let current = this.head;
     let str = '';
