@@ -5,7 +5,6 @@ const SinglyLinkedList = require('./../index');
 let llOne = new SinglyLinkedList();
 llOne.insert(3);
 llOne.insert(1);
-console.log(llOne.toString());
 
 let llTwo = new SinglyLinkedList();
 llTwo.insert(4);

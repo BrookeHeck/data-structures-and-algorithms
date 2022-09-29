@@ -85,6 +85,19 @@ class SinglyLinkedList {
     }
   }
 
+  reverse() {
+    let previous = this.head;
+    let current = this.head.next;
+    this.head.next = null;
+    while(current !== null) {
+      let temp = current.next;
+      current.next = previous;
+      previous = current;
+      current = temp;
+    }
+    this.head = previous;
+  }
+
   toString() {
     let current = this.head;
     let str = '';
