@@ -74,6 +74,17 @@ class SinglyLinkedList {
     return arr[arr.length - 1] ? arr[arr.length -1] : new Error('out of bounds exception');
   }
 
+  zipLists(list2) {
+    let currentOne = this.head;
+    let currentTwo = list2.head;
+    while(currentOne !== null && currentTwo !== null) {
+      let next = currentOne.next;
+      currentOne.next = currentTwo;
+      currentOne = currentTwo;
+      currentTwo = next;
+    }
+  }
+
   toString() {
     let current = this.head;
     let str = '';
