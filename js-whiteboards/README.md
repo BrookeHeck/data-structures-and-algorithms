@@ -45,3 +45,13 @@ The approach I took for all of these were basically the same, the only differenc
 
 ### Approach & Efficiency
 The approach I took was to make an array of size k and then keep track of the last values in the list using that array. When I hit the tail, I returned the value at the end of the array, because this represented the value that was inserted earliest. I don't think this is a very efficient algorithm, but since this is a singly linked and not doubly linked, it's the best I could come up with.
+
+</br>
+
+## Class 08
+
+### Whiteboard Process
+<img src='./img/challenge08.png' width='100%' height='auto'>
+
+### Approach & Efficiency
+The approach I took was to start with the list that method was invoked on, and than make the next of that head to point to the head of the list passed into the method. I alternated back and forth between the two lists until the two lists were zipped together.
