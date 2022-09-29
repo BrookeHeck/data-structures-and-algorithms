@@ -55,3 +55,13 @@ The approach I took was to make an array of size k and then keep track of the la
 
 ### Approach & Efficiency
 The approach I took was to start with the list that method was invoked on, and than make the next of that head to point to the head of the list passed into the method. I alternated back and forth between the two lists until the two lists were zipped together.
+
+</br>
+
+## Class 09
+
+### Whiteboard Process
+<img src='./img/challenge09-1.png' width='100%' height='auto'>
+
+### Approach & Efficiency
+The approach I took was to iterate through the list and always hold to of the nodes as variables, the previous and current node. I was able to just change the next references to the previous node until I hit the last node. Before I looped I had to change the next of head to null and at the end I had to change the head to the last node of the original list.
