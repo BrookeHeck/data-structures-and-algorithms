@@ -58,6 +58,22 @@ class SinglyLinkedList {
     }
   }
 
+  kthFromEnd(k) {
+    let current = this.head;
+    let arr = [];
+    for(let i = 0; i < k; i++) {
+      arr[i] = null;
+    }
+    while(current !== null) {
+      for(let i = arr.length - 1; i >= 1; i--) {
+        arr[i] = arr[i - 1];
+      }
+      arr[0] = current.value;
+      current = current.next;
+    }
+    return arr[arr.length - 1] ? arr[arr.length -1] : new Error('out of bounds exception');
+  }
+
   toString() {
     let current = this.head;
     let str = '';
