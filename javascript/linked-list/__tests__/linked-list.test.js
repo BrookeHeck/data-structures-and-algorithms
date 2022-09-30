@@ -14,7 +14,6 @@ describe('Should successfully instantiate an empty linked list', () => {
 describe('Should properly add nodes into the linked list', () => {
   test('Should insert a node at the head of linked list with a value of one and the next node null', () => {
     ll.insert(1);
-    console.log(ll);
     expect(ll.head).toBeTruthy();
     expect(ll.head.value).toEqual(1);
     expect(ll.head.next).not.toBeTruthy();

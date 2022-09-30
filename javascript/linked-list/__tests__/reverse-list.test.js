@@ -6,7 +6,6 @@ const ll = new SinglyLinkedList();
 ll.insert(1);
 ll.insert(2);
 ll.insert(3);
-console.log(ll.toString());
 
 describe('Test reverse list', () => {
   test('Should reverse the nodes in the linked list', () => {

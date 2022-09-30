@@ -98,6 +98,26 @@ class SinglyLinkedList {
     this.head = previous;
   }
 
+  isPalindrome() {
+    let arr = [];
+    let current = this.head;
+    let counter = 0;
+    while(current !== null) {
+      arr[counter] = current.value;
+      counter++;
+      current = current.next;
+    }
+    current = this.head;
+    let isPalindrome = true;
+    for(let i = arr.length - 1; i > 0; i--) {
+      if(arr[i] !== current.value) {
+        isPalindrome = false;
+        break;
+      } else current = current.next;
+    }
+    return isPalindrome;
+  }
+
   toString() {
     let current = this.head;
     let str = '';
