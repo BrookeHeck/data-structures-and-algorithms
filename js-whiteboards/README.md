@@ -65,3 +65,9 @@ The approach I took was to start with the list that method was invoked on, and t
 
 ### Approach & Efficiency
 The approach I took was to iterate through the list and always hold to of the nodes as variables, the previous and current node. I was able to just change the next references to the previous node until I hit the last node. Before I looped I had to change the next of head to null and at the end I had to change the head to the last node of the original list.
+
+### Whiteboard Process
+<img src='./img/challenge09-2.png' width='100%' height='auto'>
+
+### Approach & Efficiency
+The approach I took was to store the nodes in an array. Then I looped through that array and compared the head of the list to the end of the list. Then I iterated through the list and through the array in reverse comparing the values with each iteration. If all values matched, I returned true.
