@@ -12,3 +12,4 @@ The approach I took was to only define the front and rear in the class, and only
 - peek - if the queue isn't empty, it returns the value of the front node
 - enqueue - adds a node to the rear of the queue
 - dequeue - removes a node from the front
+- toString - iterates through the list from front to rear and makes a string containing all the node values
