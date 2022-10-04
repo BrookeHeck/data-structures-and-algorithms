@@ -30,13 +30,13 @@ class Stack {
       currentTop.next = null;
       return currentTop.value;
     } else {
-      throw new Error('Stack is empty');
+      return null;
     }
   }
 
   peek() {
     if(!this.isEmpty()) return this.top.value;
-    else throw new Error('Stack is empty');
+    else return null;
   }
 
   isEmpty() {
