@@ -24,12 +24,12 @@ class BinaryTree {
       let node = stack.pop();
       if (node.right) {
         if (node.right.value === key) return true;
-        stack.push(node.right)
-      };
+        stack.push(node.right);
+      }
       if (node.left) {
         if (node.left.value === key) return true;
-        stack.push(node.left)
-      };
+        stack.push(node.left);
+      }
     }
     return false;
   }
@@ -44,7 +44,7 @@ class BinaryTree {
       else {
         node.value.left = newNode;
         break;
-      };
+      }
       if(node.value.right) queue.enqueue(node.value.right);
       else {
         node.value.right = newNode;
