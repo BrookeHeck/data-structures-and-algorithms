@@ -81,3 +81,14 @@ The approach I took was to store the nodes in an array. Then I looped through th
 
 ### Approach & Efficiency
 The approach I took was to use one stack as the queue front and the other as the queue rear. The front only had the top value, while the rear held all the other values. The dequeue was efficient because all I had to do was pop the both stacks, push the popped value from the rear stack onto the front stack, and return the popped value from the front stack. This was O(1) for both time and space. Enqueueing was not as efficient. Since I needed to add the value to the bottom of the stack, I had to pop the stack until it was empty, push on the new node, and the push all the nodes back onto my rear stack. This was O(n) for both time and space.
+
+## Class 14
+
+### Challenge
+The challenge was to create a queue method that emulated duck duck goose. The method would take an integer, k, as an argument, and then I would need to iterate through the queue k times and remove only the node that was the kth node. When one node was left, I would return that value.
+
+### Whiteboard Process
+<img src='./img/challenge14.png' width='100%' height='auto'>
+
+### Approach & Efficiency
+The approach I took was dequeue and enqueue the value I just dequeued until I hit the kth value. I used a counter to keep track of when I hit k and then reset it. When the counter hit k, I did a dequeue without a enqueue and reset the counter. All this happened inside the while loop until the front value had a next of null. This meant that I only had one node left in the queue. This broke me out of the loop and finally I return the value. The time depends of the size of the queue, so this is O(n) for time. There are no growing variables in this algorithm so it is O(1) for space.
