@@ -14,6 +14,6 @@ To instantiate the tree, give the root node a value. From there, to add a node I
 ```binaryTree.add(2)```
 
 - Contains - to see if the tree contains a value, call the contains method and provide it with a search key as a parameter, true will be returned if the value is found and false if it is not
-```binaryTree.contains(2)``
+```binaryTree.contains(2)```
 this will return true
 ```binaryTree.contains(3)```
