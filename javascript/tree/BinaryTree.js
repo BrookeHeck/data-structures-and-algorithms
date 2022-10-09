@@ -16,7 +16,7 @@ class BinaryTree {
     this.root = new Node(value);
   }
 
-  includes(key) {
+  contains(key) {
     if(this.root.value === key) return true;
     const stack = new Stack();
     stack.push(this.root);
@@ -52,6 +52,18 @@ class BinaryTree {
       }
     }
   }
+
+  // inOrderTraversal() {
+
+  // }
+
+  // preOrderTraversal() {
+
+  // }
+
+  // postOrderTraversal() {
+
+  // }
 }
 
 module.exports = BinaryTree;
