@@ -18,15 +18,7 @@ describe('Test binary tree', () => {
     expect(binaryTree.root.right.value).toEqual(3);
 
   });
-  // test('Can successfully return a collection from a preorder traversal', () => {
-    
-  // });
-  // test('Can successfully return a collection from an inorder traversal', () => {
 
-  // });
-  // test('Can successfully return a collection from a postorder traversal', () => {
-
-  // });
   test('Returns false for the contains method, given a non-existing node value', () => {
     const exists = binaryTree.contains(4);
     expect(exists).not.toBeTruthy();
@@ -35,5 +27,17 @@ describe('Test binary tree', () => {
   test('Returns true for the contains method, given an existing node value', () => {
     const exists = binaryTree.contains(3);
     expect(exists).toBeTruthy();
+  });
+
+
+  test('Returns 3 for the max value', () => {
+    const max = binaryTree.getMax();
+    expect(max).toEqual(3);
+  });
+
+  test('Return 5 after a 5 node is added to tree and is new max', () => {
+    binaryTree.add(5);
+    const max = binaryTree.getMax();
+    expect(max).toEqual(5);
   });
 });
