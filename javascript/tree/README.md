@@ -8,12 +8,31 @@ To instantiate the tree, give the root node a value. From there, to add a node I
 
 ## API
 - Instantiate - create an instance of the binary tree by requiring the module, and using the new keyword to make a binary tree object, when instantiating give the root value to the constructor
+</br>
 ```const binaryTree = new BinaryTree(1)```
 
 - Add - to add a node, call the add method and give it the value of the new node as a parameter, nodes are added from left to right, and then down if all nodes are filled at that height
+</br>
 ```binaryTree.add(2)```
 
 - Contains - to see if the tree contains a value, call the contains method and provide it with a search key as a parameter, true will be returned if the value is found and false if it is not
+</br>
 ```binaryTree.contains(2)```
 this will return true
+</br>
 ```binaryTree.contains(3)```
+this will return false
+
+- getMax - iterates through the tree and finds the node with the highest value, only works on a tree with numbers, the value of that node will be returned
+</br>
+```binaryTree.getMax()```
+this will return 2
+
+
+## Code Challenge 16
+The challenge was to iterate through a binary tree and find the node with the highest value. I did this in a very similar way to contains. The method added to the binary tree class should return the value of the node.
+
+## Approach and Efficiency
+I took a very similar approach to this challenge as I did the contains method. To start I set the root value as the max value. Then I did a depth first search using a stack. I checked the value of each of node through as I traversed. If the value of the node was higher than the max variable, I changed the max variable to that node's value. When I made it through the entire loop, I returned the value.
+
+<img src="./challenge16.png" width="100%" height="auto" >
