@@ -53,6 +53,24 @@ class BinaryTree {
     }
   }
 
+  getMax() {
+    let max = this.root.value;
+    const stack = new Stack();
+    stack.push(this.root);
+    while(stack.isNotEmpty()) {
+      const node = stack.pop();
+      if(node.right) {
+        if(node.right.value > max) max = node.right.value;
+        stack.push(node.right);
+      }
+      if(node.left) {
+        if(node.left.value > max) max = node.left.value;
+        stack.push(node.left);
+      }
+    }
+    return max;
+  }
+
   // inOrderTraversal() {
 
   // }
