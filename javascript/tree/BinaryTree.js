@@ -57,7 +57,7 @@ class BinaryTree {
     let max = this.root.value;
     const stack = new Stack();
     stack.push(this.root);
-    while(stack.isNotEmpty()) {
+    while(!stack.isEmpty()) {
       const node = stack.pop();
       if(node.right) {
         if(node.right.value > max) max = node.right.value;
@@ -70,18 +70,6 @@ class BinaryTree {
     }
     return max;
   }
-
-  // inOrderTraversal() {
-
-  // }
-
-  // preOrderTraversal() {
-
-  // }
-
-  // postOrderTraversal() {
-
-  // }
 }
 
 module.exports = BinaryTree;
