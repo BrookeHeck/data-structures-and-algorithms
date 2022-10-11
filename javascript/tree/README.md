@@ -27,6 +27,9 @@ this will return false
 </br>
 ```binaryTree.getMax()```
 this will return 2
+- toString - iterates over the tree in a breadth first traversal and returns a string with all the values in the tree
+</br>
+```binaryTree.toString()```
 
 
 ## Code Challenge 16
@@ -36,3 +39,14 @@ The challenge was to iterate through a binary tree and find the node with the hi
 I took a very similar approach to this challenge as I did the contains method. To start I set the root value as the max value. Then I did a depth first search using a stack. I checked the value of each of node through as I traversed. If the value of the node was higher than the max variable, I changed the max variable to that node's value. When I made it through the entire loop, I returned the value.
 
 <img src="./challenge16.png" width="100%" height="auto" >
+
+</br>
+
+## Code Challenge 17
+The challenge was to do breadth first search and print out all the node values in that order.
+
+## Approach and Efficiency
+I used a queue to do a breadth first search. I started by enqueueing the root and adding that value to my string. Then I started a while loop that started by dequeueing the the first node. If there was a left and right node, the value was added to the string and nodes were added to the queue. When the queue is empty, the the while loop ends and every single value in the tree is in the string and I can return that string. This algorithm is O(n) for both time and space.
+
+
+<img src="./codeChallenge17.png" width="100%" height="auto" >

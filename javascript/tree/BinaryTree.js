@@ -81,18 +81,10 @@ class BinaryTree {
         str = `${str}${node.value.left.value} `;
         queue.enqueue(node.value.left);
       }
-      // else {
-      //   node.value.left = newNode;
-      //   break;
-      // }
       if(node.value.right) {
         str = `${str}${node.value.right.value} `;
         queue.enqueue(node.value.right);
       }
-      // else {
-      //   node.value.right = newNode;
-      //   break;
-      // }
     }
     return str;
   }
