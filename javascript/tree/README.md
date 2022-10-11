@@ -9,31 +9,31 @@ To instantiate the tree, give the root node a value. From there, to add a node I
 ## API
 - Instantiate - create an instance of the binary tree by requiring the module, and using the new keyword to make a binary tree object, when instantiating give the root value to the constructor
 
-```const binaryTree = new BinaryTree(1)```
+``` const binaryTree = new BinaryTree(1) ```
 
 - Add - to add a node, call the add method and give it the value of the new node as a parameter, nodes are added from left to right, and then down if all nodes are filled at that height
 
-```binaryTree.add(2)```
+``` binaryTree.add(2) ```
 
 - Contains - to see if the tree contains a value, call the contains method and provide it with a search key as a parameter, true will be returned if the value is found and false if it is not
 
-```binaryTree.contains(2)```
+``` binaryTree.contains(2) ```
 
 this will return true
 
-```binaryTree.contains(3)```
+``` binaryTree.contains(3) ```
 
 this will return false
 
 - getMax - iterates through the tree and finds the node with the highest value, only works on a tree with numbers, the value of that node will be returned
 
-```binaryTree.getMax()```
+``` binaryTree.getMax() ```
 
 this will return 2
 
 - toString - iterates over the tree in a breadth first traversal and returns a string with all the values in the tree
 
-```binaryTree.toString()```
+``` binaryTree.toString() ```
 
 
 ## Code Challenge 16
