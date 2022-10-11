@@ -17,18 +17,25 @@ To instantiate the tree, give the root node a value. From there, to add a node I
 
 - Contains - to see if the tree contains a value, call the contains method and provide it with a search key as a parameter, true will be returned if the value is found and false if it is not
 </br>
+
 ```binaryTree.contains(2)```
+
 this will return true
 </br>
+
 ```binaryTree.contains(3)```
+
 this will return false
 
 - getMax - iterates through the tree and finds the node with the highest value, only works on a tree with numbers, the value of that node will be returned
 </br>
+
 ```binaryTree.getMax()```
+
 this will return 2
 - toString - iterates over the tree in a breadth first traversal and returns a string with all the values in the tree
 </br>
+
 ```binaryTree.toString()```
 
 
