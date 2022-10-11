@@ -70,6 +70,32 @@ class BinaryTree {
     }
     return max;
   }
+
+  toString() {
+    const queue = new Queue();
+    queue.enqueue(this.root);
+    let str = `${this.root.value} `;
+    while (!queue.isEmpty()) {
+      let node = queue.dequeue();
+      if(node.value.left) {
+        str = `${str}${node.value.left.value} `;
+        queue.enqueue(node.value.left);
+      }
+      // else {
+      //   node.value.left = newNode;
+      //   break;
+      // }
+      if(node.value.right) {
+        str = `${str}${node.value.right.value} `;
+        queue.enqueue(node.value.right);
+      }
+      // else {
+      //   node.value.right = newNode;
+      //   break;
+      // }
+    }
+    return str;
+  }
 }
 
 module.exports = BinaryTree;

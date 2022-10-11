@@ -40,4 +40,19 @@ describe('Test binary tree', () => {
     const max = binaryTree.getMax();
     expect(max).toEqual(5);
   });
+
+  test('Return a string that gives the nodes in breadth first search order', () => {
+    const tree = new BinaryTree(2);
+    tree.add(7);
+    tree.add(5);
+    tree.add(2);
+    tree.add(6);
+    tree.add(9);
+    tree.add(5);
+    tree.add(11);
+    tree.add(4);
+
+    const str = tree.toString();
+    expect(str).toEqual('2 7 5 2 6 9 5 11 4 ');
+  });
 });
