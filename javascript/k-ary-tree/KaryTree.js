@@ -21,15 +21,16 @@ class KaryTree {
     else {
       const queue = new Queue();
       queue.enqueue(this.root);
-      let nodeAdded = false;
-      while(!queue.isEmpty() && !nodeAdded) {
+      let isAdded = false;
+      while(!queue.isEmpty() && !isAdded) {
         const node = queue.dequeue().value;
-        for(let index in node.children) {
-          if(node.children.length < this.k) {
-            node.children[node.children.length] = newNode;
-          } else {
-            queue.enqueue(node.children[index]);
+        for(let i = 0; i < this.k; i++) {
+          if(!node.children[i]) {
+            node.children[i] = newNode;
+            isAdded = true;
+            break;
           }
+          if(node.children[i]) queue.enqueue(node.children[i]);
         }
       }
     }
