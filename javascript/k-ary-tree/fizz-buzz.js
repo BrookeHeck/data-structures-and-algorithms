@@ -6,7 +6,7 @@ const KaryTree = require('./KaryTree');
 const karyTree = new KaryTree(3);
 
 karyTree.add(3);
-karyTree.add(5);
+karyTree.add(10);
 karyTree.add(15);
 karyTree.add(7);
 karyTree.add(12);
@@ -23,14 +23,13 @@ function fizzBuzz(tree) {
   queue.enqueue(tree.root);
   while(!queue.isEmpty()) {
     const node = queue.dequeue().value;
+    if(node.value % 3 === 0 && node.value % 5 === 0) node.value = 'FIZZ BUZZ';
+    else if(node.value % 3 === 0) node.value = 'FIZZ';
+    else if(node.value % 5 === 0) node.value = 'BUZZ';
+    console.log(node.value);
+
     for(let i = 0; i < tree.k; i++) {
-      if(node.children[i]) {
-        queue.enqueue(node.children[i]);
-        if(node.children[i].value % 3 === 0 && node.children[i].value % 5 === 0) node.children[i].value = 'FIZZ BUZZ';
-        else if(node.children[i].value % 3 === 0) node.children[i].value = 'FIZZ';
-        else if(node.children[i].value % 5 === 0) node.children[i].value = 'BUZZ';
-        console.log(node.children[i].value);
-      }
+      if(node.children[i]) queue.enqueue(node.children[i]);
     }
   }
 }
