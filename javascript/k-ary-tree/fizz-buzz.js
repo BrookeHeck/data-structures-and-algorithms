@@ -27,13 +27,12 @@ function fizzBuzz(tree) {
       if(node.children[i]) {
         queue.enqueue(node.children[i]);
         if(node.children[i].value % 3 === 0 && node.children[i].value % 5 === 0) node.children[i].value = 'FIZZ BUZZ';
-        if(node.children[i].value % 3 === 0) node.children[i].value = 'FIZZ';
-        if(node.children[i].value % 5 === 0) node.children[i].value = 'BUZZ';
+        else if(node.children[i].value % 3 === 0) node.children[i].value = 'FIZZ';
+        else if(node.children[i].value % 5 === 0) node.children[i].value = 'BUZZ';
         console.log(node.children[i].value);
       }
     }
   }
-  return tree;
 }
 fizzBuzz(karyTree);
 
