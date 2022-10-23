@@ -12,9 +12,7 @@ function selectionSort(arr) {
     let temp = arr[min];
     arr[min] = arr[i];
     arr[i] = temp;
-    console.log(arr[i], arr[min]);
   }
-  console.log(arr);
 }
 
-selectionSort([8, 4, 23, 42, 16, 15]);
+module.exports = selectionSort;
