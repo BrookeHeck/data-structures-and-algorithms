@@ -52,7 +52,7 @@ ALGORITHM Merge(left, right, arr)
 This algorithm is O(n * log(n)). The splitting algorithm happens log(n) times. The merging algorithm happens n - 1 times. When you combine both these efficiencies you get a O(n * log(n)).
 
 ### Space
-This algorithm requires a temporary array to be when merging the left and right arrays. The array is dependent on the n, so we can O(n) efficiency for space.
+This algorithm requires a temporary array to be created when splitting the left and right arrays. The array is dependent on the n, so we can O(n) efficiency for space.
 
 ## Resources
 [Algorithms: Merge Sort](https://www.youtube.com/watch?v=KF2j-9iSf4Q)
