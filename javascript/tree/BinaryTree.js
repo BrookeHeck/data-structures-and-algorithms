@@ -71,6 +71,26 @@ class BinaryTree {
     return max;
   }
 
+  getHeight() {
+    let countHeight = 0;
+    let height = 0;
+    const stack = new Stack();
+    stack.push(this.root);
+    while(!stack.isEmpty()) {
+      const currNode = stack.pop();
+      if(currNode.right || currNode.left) {
+        countHeight++;
+      } else {
+        if(countHeight > height) height = countHeight;
+        countHeight = 0;
+      }
+
+      if(currNode.right) stack.push(currNode.right);
+      if(currNode.left) stack.push(currNode.left);
+    }
+    return height;
+  }
+
   toString() {
     const queue = new Queue();
     queue.enqueue(this.root);

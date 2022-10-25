@@ -55,4 +55,29 @@ describe('Test binary tree', () => {
     const str = tree.toString();
     expect(str).toEqual('2 7 5 2 6 9 5 11 4 ');
   });
+
+  test('Test get height', () => {
+    const binaryTree = new BinaryTree(0);
+
+    const height0 = binaryTree.getHeight();
+    expect(height0).toEqual(0);
+
+    binaryTree.add(1);
+    binaryTree.add(1);
+    binaryTree.add(2);
+
+    let height = binaryTree.getHeight();
+    expect(height).toEqual(2);
+
+    binaryTree.add(2);
+    binaryTree.add(2);
+    binaryTree.add(2);
+    binaryTree.add(3);
+
+    let height2 = binaryTree.getHeight();
+    expect(height2).toEqual(3);
+
+  });
 });
+
+
