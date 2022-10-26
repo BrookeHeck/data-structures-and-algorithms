@@ -15,7 +15,7 @@ function sortTitle(movies) {
 }
 
 function inGenre(movies, genre) {
-  return [];
+  return movies.filter(movie => movie.genres.includes(genre));
 }
 
 module.exports = {
