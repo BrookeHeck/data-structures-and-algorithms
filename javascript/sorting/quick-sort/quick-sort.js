@@ -2,9 +2,10 @@
 
 function quickSort(arr, low, high) {
   if(low < high) {
-    let pi = partition(arr, low, high);
-    quickSort(arr, low, pi - 1);
-    quickSort(arr, pi + 1, high);
+    let partitionIndex = partition(arr, low, high);
+    quickSort(arr, low, partitionIndex - 1);
+    quickSort(arr, partitionIndex + 1, high);
+    console.log(arr);
   }
 }
 
