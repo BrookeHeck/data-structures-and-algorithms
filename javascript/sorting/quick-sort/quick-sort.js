@@ -5,7 +5,6 @@ function quickSort(arr, low, high) {
     let partitionIndex = partition(arr, low, high);
     quickSort(arr, low, partitionIndex - 1);
     quickSort(arr, partitionIndex + 1, high);
-    console.log(arr);
   }
 }
 
