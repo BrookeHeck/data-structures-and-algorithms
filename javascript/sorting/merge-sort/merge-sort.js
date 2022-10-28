@@ -13,7 +13,6 @@ function mergeSort(arr) {
     for(let i = 0; i < mid + 1; i++) {
       if(arr[mid + i]) right[i] = arr[mid + i];
     }
-
     mergeSort(left);
     mergeSort(right);
     merge(left, right, arr);
