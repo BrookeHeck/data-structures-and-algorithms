@@ -40,5 +40,13 @@ describe('Testing hash table implementation', () => {
     const hash = hashTable.hash('brooke');
     expect(hash).toEqual(558);
   });
+
+  test('Return true if key is in hash table and false if it is not', () => {
+    const value = hashTable.has('brooke');
+    const value2 = hashTable.has('nonexistent-key');
+
+    expect(value).toBeTruthy();
+    expect(value2).not.toBeTruthy();
+  });
 });
 

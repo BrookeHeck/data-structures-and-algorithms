@@ -52,12 +52,26 @@ class HashTable {
     return value;
   }
 
-  // returns a collection of Keys
+  // returns a boolean for if the key exists in the list
   has(key) {
     const hash = this.hash(key);
     if(hash) {
-      return this.table[hash] ? true : false;
+      let list = this.table[hash];
+      if(list) {
+        let current = list.head;
+        while(current) {
+          const currentKey = current.value.split(':')[0];
+          if(currentKey === key) return true;
+          else current = current.next;
+        }
+      }
     }
+    return false;
+  }
+
+  // returns an array of all the keys in the table
+  keys() {
+
   }
 }
 
