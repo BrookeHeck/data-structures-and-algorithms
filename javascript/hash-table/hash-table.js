@@ -26,22 +26,38 @@ class HashTable {
     const hash = this.hash(key);
     if (hash) {
       let list = this.has(key);
-      if (!list) list = new LinkedList();
+      if (!list) {
+        list = new LinkedList();
+        this.table[hash] = list;
+      }
       list.add(`${key}:${value}`);
-      this.table[hash] = list;
     }
   }
 
   // returns the value stored in the bucket associated with the key parameter
   get(key) {
-
+    const hash = this.hash(key);
+    let value = null;
+    if(hash) {
+      const list = this.table[hash];
+      if(list) {
+        let current = list.head;
+        while(current && !value) {
+          const currentKey = current.value.split(':')[0];
+          if(currentKey === key) value = current.value.split(':')[1];
+          else current = current.next;
+        }
+      }
+    }
+    return value;
   }
 
   // returns a collection of Keys
   has(key) {
     const hash = this.hash(key);
-    if(hash) return this.table[hash];
-    else return null;
+    if(hash) {
+      return this.table[hash] ? true : false;
+    }
   }
 }
 
