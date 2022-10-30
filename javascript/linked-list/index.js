@@ -13,11 +13,15 @@ class SinglyLinkedList {
 
   append(value) {
     let current = this.head;
-    while(current.next !== null) {
-      current = current.next;
-    }
     let newNode = new Node(value);
-    current.next = newNode;
+    if(!current) {
+      current = newNode;
+    } else {
+      while(current.next !== null) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
   }
 
   includes(value) {
