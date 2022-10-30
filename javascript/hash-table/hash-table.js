@@ -25,12 +25,12 @@ class HashTable {
   set(key, value) {
     const hash = this.hash(key);
     if (hash) {
-      let list = this.has(key);
+      let list = this.table[hash];
       if (!list) {
         list = new LinkedList();
         this.table[hash] = list;
       }
-      list.add(`${key}:${value}`);
+      list.insert(`${key}:${value}`);
     }
   }
 
@@ -61,5 +61,5 @@ class HashTable {
   }
 }
 
-module.export = HashTable;
+module.exports = HashTable;
 
