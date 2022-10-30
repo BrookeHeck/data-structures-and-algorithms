@@ -71,7 +71,17 @@ class HashTable {
 
   // returns an array of all the keys in the table
   keys() {
-
+    const keyArray = [];
+    for(let list of this.table) {
+      if(list) {
+        let current = list.head;
+        while(current) {
+          keyArray.push(current.value.split(':')[0]);
+          current = current.next;
+        }
+      }
+    }
+    return keyArray;
   }
 }
 

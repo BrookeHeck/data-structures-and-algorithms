@@ -48,5 +48,10 @@ describe('Testing hash table implementation', () => {
     expect(value).toBeTruthy();
     expect(value2).not.toBeTruthy();
   });
+
+  test('Return an array of all the keys in the hash table', () => {
+    const keyArray = hashTable.keys();
+    expect(keyArray).toEqual(['user', 'hellon', 'brooke']);
+  });
 });
 
