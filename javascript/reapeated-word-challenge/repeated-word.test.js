@@ -14,5 +14,11 @@ describe('Test function that returns the first repeated word in a string', () =>
     expect(word2).toEqual('summer');
   });
 
+  test('A string with no repeated words returns null', () => {
+    const str1 = 'No repeated words here!';
+    const word = firstRepeatedWord(str1);
+    expect(word).toEqual(null);
+  });
+
 });
 
