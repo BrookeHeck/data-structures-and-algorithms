@@ -13,7 +13,6 @@ function treeIntersection(tree1, tree2) {
 
   traverse(tree2, (value) => {
     if(hashTable.has(value)) intersectionArr.push(value);
-    else hashTable.set(value, value);
   });
 
   return intersectionArr;

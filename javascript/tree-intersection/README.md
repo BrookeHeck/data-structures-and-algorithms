@@ -2,13 +2,15 @@
 The challenge was to make a function that takes in two binary trees and return an array of values that appear in both trees.
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+<img src='./challenge32.png' width='100%' height='auto' />
 
 ## Approach & Efficiency
-My approach was to do a breadth first search through each of the trees. For every node through the traversal, I evaluated the node value. If the value was already in the hash table I created, I added it to my intersection array. If it wasn't, I added the values to the hash table. The efficiency of this algorithm for time is O(n). This is because it is dependent on the size of the inputs, the two trees.
+My approach was to do a breadth first search through each of the trees. For every node through the traversal, I executed a callback function and passed the callback the node. The callback for the first tree traversal was to add every value to the tree. For the second tree, I passed a callback function to the traverse function that 
 
 ## Solution
-- just import the function and pass two binary trees as the input
+[Solution Source Code](https://github.com/BrookeHeck/data-structures-and-algorithms/blob/main/javascript/tree-intersection/tree-intersection.js)
+
+- import the function and pass two binary trees as the input
 - the function will return an array of values that are in both trees
 ```js
 const treeIntersection = ('tree-intersection');
