@@ -15,6 +15,7 @@ function leftJoin(left, right) {
       }
     }
   });
+  return arr;
 }
 
 function iterateKeys(hashTable, callback) {
