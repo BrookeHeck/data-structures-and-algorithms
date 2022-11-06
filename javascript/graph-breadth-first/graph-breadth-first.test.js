@@ -1,6 +1,6 @@
 'use strict';
 
-const Graph = require('./../graph/index');
+const Graph = require('../graph/index');
 const graphBreadthFirst = require('./index');
 
 describe('Testing the graphBreadthFirst function', () => {

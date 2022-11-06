@@ -1,6 +1,6 @@
 'use strict';
 
-const Queue = require('./../queue/index');
+const Queue = require('../queue/index');
 
 function graphBreadthFirst(graph, root) {
   const queue = new Queue();
