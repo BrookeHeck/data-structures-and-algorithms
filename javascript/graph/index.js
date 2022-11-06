@@ -7,7 +7,7 @@ class Vertex {
 }
 
 class Edge {
-  constructor(vertex, weight = 1) {
+  constructor(vertex, weight) {
     this.vertex = vertex;
     this.weight = weight;
   }
@@ -33,10 +33,10 @@ class Graph {
    * @param {Vertex} startVertex
    * @param {Vertex} edgeVertex
    */
-  addEdge(startVertex, endVertex) {
+  addEdge(startVertex, endVertex, weight = 1) {
     if (this.adjacencies.has(startVertex) && this.adjacencies.has(endVertex)) {
       let edges = this.adjacencies.get(startVertex); // []
-      edges.push(new Edge(endVertex));
+      edges.push(new Edge(endVertex, weight));
     } else {
       throw new Error('Invalid input Vertex');
     }
@@ -66,7 +66,7 @@ class Graph {
     const nodeArr = [];
     let currentKey = iterator.next();
     while(!currentKey.done) {
-      nodeArr.push(currentKey);
+      nodeArr.push(currentKey.value);
       currentKey = iterator.next();
     }
     return nodeArr;
