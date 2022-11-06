@@ -1,17 +1,29 @@
 'use strict';
 
-// const graph = require('./index');
+const Graph = require('./index');
 
 describe('Graph', () => {
-  test('Node can be successfully added to the graph', () => {
 
+  test('Node can be successfully added to the graph', () => {
+    const graph = new Graph();
+    const vertex = graph.addVertex('a');
+
+    expect(graph.getNodes()[0].value).toEqual(vertex);
   });
 
   test('An edge can be successfully added to the graph', () => {
+    const graph = new Graph();
+    const startVertex = graph.addVertex(1);
+    const endVertex = graph.addVertex(2);
+    graph.addEdge(startVertex, endVertex);
 
+    const neighbors = graph.getNeighbors(startVertex);
+    expect(neighbors[0].vertex.value).toEqual(2);
+    expect(neighbors[0].weight).toEqual(1);
   });
 
   test('A collection of all nodes can be properly retrieved from the graph', () => {
+    
 
   });
 

@@ -51,17 +51,39 @@ class Graph {
   }
 
   /**
+   * returns the degree, which is the number of edges
+   * @param {Vertex} Vertex
+   */
+  getDegree(vertex) {
+    return this.adjacencies.get(vertex).length;
+  }
+
+  /**
    * Return all Nodes that are listed in the adjacency list
    */
   getNodes() {
-    return this.adjacencies.keys();
+    const iterator = this.adjacencies.keys();
+    const nodeArr = [];
+    let currentKey = iterator.next();
+    while(!currentKey.done) {
+      nodeArr.push(currentKey);
+      currentKey = iterator.next();
+    }
+    return nodeArr;
   }
 
   /**
    * Returns the total number of nodes in the graph.
    */
   size() {
-    return this.adjacencies.keys().length;
+    const iterator = this.adjacencies.keys();
+    let size = 0;
+    let currentKey = iterator.next();
+    while(!currentKey.done) {
+      size++;
+      currentKey = iterator.next();
+    }
+    return size;
   }
 }
 
