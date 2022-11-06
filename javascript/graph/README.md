@@ -1,10 +1,4 @@
-# Binary Trees
-
-## Challenge
-The challenge was to implement a graph.
-
-## Approach & Efficiency
-
+# Graphs
 
 ## Graph Class
 The only property in this class is the adjacencies property and it is a map. No values are passed to the constructor, and an empty map will be made when instantiated. Adding a vertex to the graph will create a vertex that is the key in the map. The associated value is initialized as an empty array. As you add edges to the key vertex, they will be added to their array.
