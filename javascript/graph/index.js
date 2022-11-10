@@ -85,6 +85,25 @@ class Graph {
     }
     return size;
   }
+
+  depthFirst(startVertex) {
+    const visited = [];
+    const stack = [];
+    stack.push(startVertex);
+    visited.push(startVertex.value);
+
+    while(stack.length !== 0) {
+      let currentVertex = stack.pop();
+      const neighbors = this.getNeighbors(currentVertex);
+      for(let neighbor of neighbors) {
+        if(!visited.includes(neighbor.vertex.value)) {
+          stack.push(neighbor.vertex);
+          visited.push(neighbor.vertex.value);
+        }
+      }
+    }
+    return visited;
+  }
 }
 
 module.exports = Graph;

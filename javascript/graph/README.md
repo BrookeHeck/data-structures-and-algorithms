@@ -1,5 +1,7 @@
 # Graphs
 
+[Challenge 38 Whiteboard](#challenge-38-whiteboard)
+
 ## Graph Class
 The only property in this class is the adjacencies property and it is a map. No values are passed to the constructor, and an empty map will be made when instantiated. Adding a vertex to the graph will create a vertex that is the key in the map. The associated value is initialized as an empty array. As you add edges to the key vertex, they will be added to their array.
 
@@ -73,5 +75,15 @@ const graph = new Graph();
   const size = graph.size();
   // if we have added 5 vertices to the graph, this will return 5
   ```
+
+  ### depth first traverse
+- requires a vertex as a parameter, this is where the traversal will start
+- returns an array of vertex values in the graph, values are in depth first order
+  ```js
+  const size = graph.depthFirst(startingVertex);
+  ```
+
+  ## Challenge 38 Whiteboard
+  <img src='./challenge38.png' width='100%' height='auto' />
 
 

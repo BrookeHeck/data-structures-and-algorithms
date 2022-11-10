@@ -90,4 +90,29 @@ describe('Graph', () => {
     const neighbors = graph.getNeighbors(vertices[0]);
     expect(neighbors[0].vertex).toEqual(vertex);
   });
+
+  test('Should return a list of vertex values in depth first traversal order', () => {
+    const graph = new Graph();
+    const vertexA =graph.addVertex('a');
+    const vertexB =graph.addVertex('b');
+    const vertexC = graph.addVertex('c');
+    const vertexD = graph.addVertex('d');
+    const vertexE = graph.addVertex('e');
+    const vertexF = graph.addVertex('f');
+    const vertexG = graph.addVertex('g');
+    const vertexH = graph.addVertex('h');
+
+    graph.addEdge(vertexA, vertexB);
+    graph.addEdge(vertexA, vertexD);
+    graph.addEdge(vertexB, vertexD);
+    graph.addEdge(vertexB, vertexC);
+    graph.addEdge(vertexC, vertexG);
+    graph.addEdge(vertexD, vertexE);
+    graph.addEdge(vertexD, vertexF);
+    graph.addEdge(vertexD, vertexH);
+    graph.addEdge(vertexH, vertexF);
+
+    const vertices = graph.depthFirst(vertexA);
+    expect(vertices).toEqual(['a', 'b', 'd', 'e', 'f', 'h', 'c', 'g']);
+  });
 });
