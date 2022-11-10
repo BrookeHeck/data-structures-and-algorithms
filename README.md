@@ -1,10 +1,32 @@
 # Data Structures and Algorithms
 
-See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-code-challenges), in the Code 301 Setup Guide.
+## 401 Data Structures & Code Challenges
 
-## Repository Quick Tour and Usage
+### Data Structure Implementations
+- [Graph Implementation](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/graph)
+- [Hash Table Implementation](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/hash-table)
+- [K-ary Tree Implementation](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/k-ary-tree)
+- [Linked List Implementation](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/linked-list)
+- [Queue Implementation](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/queue)
+- [Stack Implementation](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/stack)
+- [Binary Tree Implementation](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/tree)
 
-### 301 Code Challenges
+
+### Code Challenges
+- [Animal Shelter Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/animal-shelter)
+- [Breadth First Graph Traversal Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/graph-breadth-first)
+- [Graph Business Trip Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/graph-trip)
+- [Hash Table Left Join Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/left-join)
+- [Sort Movies Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/movies)
+- [Most Repeated Word Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/reapeated-word-challenge)
+- [Merge Sort Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/sorting/merge-sort)
+- [Quick Sort Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/sorting/quick-sort)
+- [Selection Sort Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/sorting/selection-sort)
+- [Stack Queue Brackets Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/stack-queue-brackets)
+- [Stack Queue Pseudo Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/stack-queue-pseudo)
+- [Tree Intersection Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/tree-intersection)
+
+## 301 Code Challenges
 
 Under the `javascript` folder, at the top level, is a sub-folder called `code-challenges`
 
@@ -18,7 +40,5 @@ To run your tests
 - run `npm test` to run all of the tests
 - run `npm test ##` to only run tests for challenge ## (i.e. 01)
 
-### 401 Data Structures, Code Challenges
 
-[401 Whiteboards](./js-whiteboards/README.md) - Go to the whiteboards and approaches taken to complete them
 
