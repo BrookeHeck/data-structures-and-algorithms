@@ -3,6 +3,7 @@
 ## 401 Data Structures & Code Challenges
 
 ### Data Structure Implementations
+
 - [Graph Implementation](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/graph)
 - [Hash Table Implementation](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/hash-table)
 - [K-ary Tree Implementation](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/k-ary-tree)
@@ -11,8 +12,8 @@
 - [Stack Implementation](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/stack)
 - [Binary Tree Implementation](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/tree)
 
-
 ### Data Structure Code Challenges
+
 - [Animal Shelter Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/animal-shelter)
 - [Breadth First Graph Traversal Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/graph-breadth-first)
 - [Graph Business Trip Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/graph-trip)
@@ -28,6 +29,5 @@
 
 ## More Code Challenges
 
-* These challenges require the use of array and object methods to create an algorithm that solves a problem
-* [Code Challenge Directory](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/code-challenges)
-
+- These challenges require the use of array and object methods to create an algorithm that solves a problem
+- [Code Challenge Directory](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/code-challenges)
