@@ -12,7 +12,7 @@
 - [Binary Tree Implementation](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/tree)
 
 
-### Code Challenges
+### Data Structure Code Challenges
 - [Animal Shelter Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/animal-shelter)
 - [Breadth First Graph Traversal Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/graph-breadth-first)
 - [Graph Business Trip Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/graph-trip)
@@ -26,19 +26,8 @@
 - [Stack Queue Pseudo Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/stack-queue-pseudo)
 - [Tree Intersection Challenge](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/tree-intersection)
 
-## 301 Code Challenges
+## More Code Challenges
 
-Under the `javascript` folder, at the top level, is a sub-folder called `code-challenges`
-
-Each day, you'll add one new file to this folder to do your work for the day's assigned code challenge
-
-If you have not already done so, run `npm install` from within this folder to setup your system to be able to run tests using `Jest`
-
-To run your tests
-
-- Change to the `javascript` folder
-- run `npm test` to run all of the tests
-- run `npm test ##` to only run tests for challenge ## (i.e. 01)
-
-
+* These challenges require the use of array and object methods to create an algorithm that solves a problem
+* [Code Challenge Directory](https://github.com/BrookeHeck/data-structures-and-algorithms/tree/main/javascript/code-challenges)
 
